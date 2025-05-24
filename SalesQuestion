@@ -1,0 +1,17 @@
+'''Question: You have just started a sales job in a department store. Your pay consists of a base salary plus a commission. The base salary is $5,000.  Your goal is to earn $30,000 a year. Write a program that finds the minimum amount of sales you have to generate in order to make $30,000.'''
+ceiling1 = 5000.00
+ceiling2 = 10000.00
+tier1 = 0.08
+tier2 = 0.10
+tier3 = 0.12
+basesalary = 5000.00
+targetincome = 30000.00
+tier1and2commissions = (ceiling1 * tier1) + ((ceiling2 - ceiling1) * tier2)
+targetcommissions = targetincome - (basesalary + tier1and2commissions)
+targetsales = (targetcommissions * (100/12)) + 10000.00
+
+
+print(format(targetsales, '>10.2f')) #target sales!
+print(format(tier1and2commissions, '>10.2f'))
+print(format(targetcommissions * (100/12), '>10.2f'))
+print(format((targetcommissions * (100/12))* tier3, '>10.2f'))
